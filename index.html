@@ -39,6 +39,7 @@
   border-radius: 5px;
   text-align: center;
 }
+
 </style>
    </head>
 
@@ -281,7 +282,18 @@
       
        
     <!-- Scroll Up -->
-    
+    <div class="container">
+	<p style="text-align:center; font-size:40px;">Gallery<p>
+	
+	<div class="row">
+		<div class="row" id="img-container">
+         
+		
+
+           
+        </div>
+	</div>
+</div>
 
     <!-- JS here -->
 	<script>
@@ -367,6 +379,48 @@ function istringify (arr) {
 	}
 	
 	
+}
+</script>
+<script>
+
+var xmlhttp = new XMLHttpRequest();
+var url = "https://script.google.com/macros/s/AKfycbyZXux7ATU1m3ZSIH29q6QvtHfi0zj2KkJCHKe5u8wd-q_Zv3ha/exec";
+console.log(url);
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    var mygalimgdata = JSON.parse(this.responseText);
+    stringify (mygalimgdata);
+  }
+};
+
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+
+
+function stringify (galimgdata) {
+
+  galimgdata.forEach( function(obj) {
+  
+   var div = document.createElement('div');
+   div.className = 'col-lg-3 col-md-4 col-xs-6 thumb'
+  var img = new Image();
+  img.src = obj.imglink;
+   img.setAttribute("class", "img-thumbnail");
+    img.setAttribute("id", "img-ht-wt-px");
+	 
+  div.appendChild(img);
+   document.getElementById("img-container").appendChild(div);
+  	  
+	 
+
+});
+
+	
+	          
+          
+	   	
+			
 }
 </script>
 	<script>
