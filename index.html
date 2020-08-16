@@ -403,7 +403,7 @@ console.log(url);
 xmlhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
     var mygalimgdata = JSON.parse(this.responseText);
-    stringify (mygalimgdata);
+    imgstringify (mygalimgdata);
   }
 };
 
@@ -412,7 +412,7 @@ xmlhttp.send();
 
 
 
-function stringify (galimgdata) {
+function imgstringify (galimgdata) {
 
   galimgdata.forEach( function(obj) {
   
