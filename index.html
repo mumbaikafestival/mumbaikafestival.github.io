@@ -334,12 +334,12 @@ xmlhttp.send();
 }
 
 function stringify (arr) {
-
-	
-	if (arr.name !=undefined){
-	var out = "";
+var out = "";
    	 out += '<p>' +     arr.response + '</p><br>';
 	document.getElementById("id01").innerHTML = out;
+	
+	if (arr.name !=undefined){
+	
 	
 	 document.getElementById('name').value = arr.name;
     document.getElementById('city').value = arr.city;
@@ -378,11 +378,11 @@ xmlhttp1.send();
 
 function istringify (arr) {
 
-	
-	
-	if (arr.name !=undefined){
 	var out = "";
    	 out += '<p>' +     arr.response + '</p><br>';
+	
+	if (arr.name !=undefined){
+	
 	document.getElementById("id02").innerHTML = out;
 	 document.getElementById('iname').value = arr.name;
     document.getElementById('icity').value = arr.city;
