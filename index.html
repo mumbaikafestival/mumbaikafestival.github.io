@@ -380,10 +380,11 @@ function istringify (arr) {
 
 	var out = "";
    	 out += '<p>' +     arr.response + '</p><br>';
+	 	document.getElementById("id02").innerHTML = out;
 	
 	if (arr.name !=undefined){
 	
-	document.getElementById("id02").innerHTML = out;
+
 	 document.getElementById('iname').value = arr.name;
     document.getElementById('icity').value = arr.city;
 	 document.getElementById('istate').value = arr.state;
