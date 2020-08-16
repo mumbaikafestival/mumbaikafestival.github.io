@@ -134,47 +134,50 @@
     <form id="form" method="POST" action="https://script.google.com/macros/s/AKfycbxsAQCQHOBy4whIFVCHQAXGmSaQcbp6k5we9yOD8iCc7gZvvH-M/exec"> 
 <div class="form-group">
     <label >Contact Number</label>
-    <input type="text" class="form-control" maxlength="10" pattern="\d{10}" placeholder="Phone Number" name="phnum">
+   <input type="text" class="form-control" maxlength="10" pattern="\d{10}" placeholder="Phone Number 10 Digit" name="phnum" id="phnum" required><br>
+	<button onclick="myFunction()" type="button" class="w3-button w3-deep-orange w3-round-large">Check Number</button>
   </div>
   
-  
+   <input type="hidden" value="Video Contest" name="contest">
 	<div class="form-group">
+	<div id="id01"></div>
       <label>Contest Category</label>
-      <select class="form-control" name="contcateg">
+      <select class="form-control" name="contcateg" id="contcateg" required>
         <option>Home  (घरगुती)</option>
         <option>Mandal  (मंडळ)</option>
         <option>Eco Friendly  (इको-फ्रेंडली)</option>
        
       </select>
 	  </div>
-	  <input type="hidden" value="Video Contest" name="contest">
+	 
   <div class="form-group">
     <label>Name</label>
-    <input type="text" class="form-control"  placeholder="Enter Name" name="name">
+    <input type="text" class="form-control"  placeholder="Enter Name" name="name" id="name" required>
 
   </div>
    <div class="form-group">
     <label>Address</label>
-    <input type="text" class="form-control"  placeholder="Enter Address" name="addr">
+    <input type="text" class="form-control"  placeholder="Enter Address" name="addr" id="addr" required>
 
   </div>
   
   
    <div class="form-group">
     <label>City</label>
-    <input type="text" class="form-control" placeholder="Enter City" name="city">
+    <input type="text" class="form-control" placeholder="Enter City" name="city" id="city" required>
 
   </div>
   <div class="form-group">
     <label>State</label>
-    <input type="text" class="form-control" placeholder="Enter State" name="state">
+    <input type="text" class="form-control" placeholder="Enter State" name="state" id="state" required>
 
   </div>
 <div class="form-group">
     <label >Pin Code</label>
-    <input type="text" class="form-control" maxlength="6" pattern="\d{6}" placeholder="Pin Code" name="pincde">
+    <input type="text" class="form-control" maxlength="6" pattern="\d{6}" placeholder="Pin Code" name="pincde" id="pincde" required>
   </div>
-  Description , Video and Image will be available to upload after 22nd August 2020 <br><br>
+  <p>
+   Description and Images will be available to upload after 22nd August 2020<br><br></p>
  <!-- <div class="form-group">
     <label>Description</label>
    
@@ -209,13 +212,15 @@
 	
 	<div class="form-group">
     <label >Contact Number</label>
-    <input type="text" class="form-control" maxlength="10" pattern="\d{10}" placeholder="Phone Number" name="phnum">
-  </div>
+   <input type="text" class="form-control" maxlength="10" pattern="\d{10}" placeholder="Phone Number 10 digit" name="phnum" id="phnum" required><br>
+	<button onclick="myFunction()" type="button" class="w3-button w3-deep-orange w3-round-large">Check Number</button>
+  </div> 
   <input type="hidden" value="Photo Contest" name="contest">
   
 	<div class="form-group">
+	<div id="id01"></div>
       <label>Contest Category</label>
-      <select class="form-control" name="contcateg">
+      <select class="form-control" name="contcateg" required>
         <option>Home  (घरगुती)</option>
         <option>Mandal  (मंडळ)</option>
         <option>Eco Friendly  (इको-फ्रेंडली)</option>
@@ -224,31 +229,31 @@
 	  </div>
   <div class="form-group">
     <label>Name</label>
-    <input type="text" class="form-control"  placeholder="Enter Name" name="name">
+    <input type="text" class="form-control"  placeholder="Enter Name" name="name" id="name" required>
 
   </div>
    <div class="form-group">
     <label>Address</label>
-    <input type="text" class="form-control"  placeholder="Enter Address" name="addr">
+    <input type="text" class="form-control"  placeholder="Enter Address" name="addr" id="addr" required>
 
   </div>
   
   
    <div class="form-group">
     <label>City</label>
-    <input type="text" class="form-control" placeholder="Enter City" name="city">
+    <input type="text" class="form-control" placeholder="Enter City" name="city" id="city" required>
 
   </div>
   <div class="form-group">
     <label>State</label>
-    <input type="text" class="form-control" placeholder="Enter State" name="state">
+    <input type="text" class="form-control" placeholder="Enter State" name="state" id="state" required>
 
   </div>
 <div class="form-group">
     <label >Pin Code</label>
-    <input type="text" class="form-control" maxlength="6" pattern="\d{6}" placeholder="Pin Code" name="pincde">
-  </div>
-   Description and Images will be available to upload after 22nd August 2020<br><br>
+    <input type="text" class="form-control" maxlength="6" pattern="\d{6}" placeholder="Pin Code" name="pincde" id="pincde" required>
+  </div><p>
+   Description and Images will be available to upload after 22nd August 2020<br><br></p>
   <!--<div class="form-group">
     <label>Description</label>
    
@@ -279,6 +284,45 @@
     
 
     <!-- JS here -->
+	<script>
+function myFunction() {
+  var x = document.getElementById("phnum").value;
+
+
+
+var xmlhttp = new XMLHttpRequest();
+var x2 = "https://script.google.com/macros/s/AKfycbzDpdBX2DQTfTePu1NZsYFwyCG1kCd8_Lw_yXN1m3QhyybzqD3n/exec?phnum=";
+var url = x2.concat(x);
+console.log(url);
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    var myArr = JSON.parse(this.responseText);
+    stringify (myArr);
+  }
+};
+
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+
+}
+function stringify (arr) {
+var out = "";
+   	 out += '<p>' +     arr.response + '</p><br>';
+	document.getElementById("id01").innerHTML = out;
+	
+	
+	if (arr.name !=undefined){
+	
+	 document.getElementById('name').value = arr.name;
+    document.getElementById('city').value = arr.city;
+	 document.getElementById('state').value = arr.state;
+    document.getElementById('addr').value = arr.address;
+	 document.getElementById('pincde').value = arr.pin_code;
+    document.getElementById('contcateg').value = arr.contest_category;
+	}
+}
+</script>
 	<script>
 function openCity(evt, cityName) {
   var i, x, tablinks;
