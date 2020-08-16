@@ -359,19 +359,19 @@ function imyFunction() {
 
 
 
-var xmlhttp = new XMLHttpRequest();
+var xmlhttp1 = new XMLHttpRequest();
 var x2 = "https://script.google.com/macros/s/AKfycbzDpdBX2DQTfTePu1NZsYFwyCG1kCd8_Lw_yXN1m3QhyybzqD3n/exec?phnum=";
 var url = x2.concat(x);
 console.log(url);
-xmlhttp.onreadystatechange = function() {
+xmlhttp1.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
     var myArr = JSON.parse(this.responseText);
     istringify (myArr);
   }
 };
 
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
+xmlhttp1.open("GET", url, true);
+xmlhttp1.send();
 
 
 }
@@ -396,19 +396,20 @@ function istringify (arr) {
 }
 </script>
 <script>
-
-var xmlhttp = new XMLHttpRequest();
+   
+   
+var xmlhttp2 = new XMLHttpRequest();
 var url = "https://script.google.com/macros/s/AKfycbyZXux7ATU1m3ZSIH29q6QvtHfi0zj2KkJCHKe5u8wd-q_Zv3ha/exec";
-console.log(url);
-xmlhttp.onreadystatechange = function() {
+
+xmlhttp2.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
     var mygalimgdata = JSON.parse(this.responseText);
     imgstringify (mygalimgdata);
   }
 };
 
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
+xmlhttp2.open("GET", url, true);
+xmlhttp2.send();
 
 
 
@@ -429,11 +430,6 @@ function imgstringify (galimgdata) {
 	 
 
 });
-
-	
-	          
-          
-	   	
 			
 }
 </script>
