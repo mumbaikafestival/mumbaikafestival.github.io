@@ -317,29 +317,59 @@
 	
 	
 	function SubimgForm (){
+	 var x = document.getElementById("iphnum").value;
+	 var name =  document.getElementById('iname').value;
+       var city = document.getElementById('icity').value;
+	var state =  document.getElementById('istate').value;
+   var addr =  document.getElementById('iaddr').value;
+	  var pincode = document.getElementById('ipincde').value;
+   
+	
+	if(x && name && city && state && addr && pincde){
 	
     $.ajax({
         url:'https://script.google.com/macros/s/AKfycbxsAQCQHOBy4whIFVCHQAXGmSaQcbp6k5we9yOD8iCc7gZvvH-M/exec',
         type:'post',
         data:$('#imgform').serialize(),
         success:function(){
-            alert("Registration Successful");
+           
         }
     });
 	alert("Registration Successful");
+	}
+	else
+	{
+	alert("Registration Failed Fill All Details");
+	}
 }
 
 function SubvidForm (){
+
+ var x = document.getElementById("phnum").value;
+	 var name =  document.getElementById('name').value;
+       var city = document.getElementById('city').value;
+	var state =  document.getElementById('state').value;
+   var addr =  document.getElementById('addr').value;
+	  var pincode = document.getElementById('pincde').value;
+   
+	
+	if(x && name && city && state && addr && pincde){
+	
 	
     $.ajax({
         url:'https://script.google.com/macros/s/AKfycbxsAQCQHOBy4whIFVCHQAXGmSaQcbp6k5we9yOD8iCc7gZvvH-M/exec',
         type:'post',
         data:$('#vidform').serialize(),
         success:function(){
-            alert("Registration Successful");
+            
         }
     });
 	alert("Registration Successful");
+	}
+	else
+	{
+	alert("Registration Failed Fill All Details");
+	}
 }
 
 </script>
