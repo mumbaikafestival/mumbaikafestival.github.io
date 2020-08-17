@@ -147,7 +147,7 @@
   <div id="vidcont" class="w3-container w3-border city">
     <h2>Video Contest Registration</h2>
    <div class="container">
-    <form id="form" method="POST" action="https://script.google.com/macros/s/AKfycbxsAQCQHOBy4whIFVCHQAXGmSaQcbp6k5we9yOD8iCc7gZvvH-M/exec"> 
+    <form id="vidform"> 
 <div class="form-group">
     <label >Contact Number</label>
    <input type="text" class="form-control" maxlength="10" pattern="\d{10}" placeholder="Phone Number 10 Digit" name="phnum" id="phnum" required><br>
@@ -213,7 +213,7 @@
 	
  </div>
  -->
-  <button id="submit" type="submit" class="w3-button w3-deep-orange w3-round-large">Submit</button>
+  <button id="submit" type="button" class="w3-button w3-deep-orange w3-round-large" onclick="SubvidForm();" >Submit</button>
 
 </form>
 <br>
@@ -223,7 +223,7 @@
    <div id="photocont" class="w3-container w3-border city" style="display:none">
     <h2>Photo Contest Registration</h2>
    <div class="container">
-    <form id="form" method="POST" action="https://script.google.com/macros/s/AKfycbxsAQCQHOBy4whIFVCHQAXGmSaQcbp6k5we9yOD8iCc7gZvvH-M/exec"> 
+    <form id="imgform" name="imgform"> 
 
 	
 	<div class="form-group">
@@ -284,7 +284,7 @@
  </div>
  
  -->
-  <button id="submit" type="submit" class="w3-button w3-deep-orange w3-round-large">Submit</button>
+  <button id="submit" type="button" class="w3-button w3-deep-orange w3-round-large" onclick="SubimgForm();">Submit</button>
 
 </form>
 <br>
@@ -311,6 +311,38 @@
 </div>
 
     <!-- JS here -->
+	
+	
+	<script>
+	
+	
+	function SubimgForm (){
+	
+    $.ajax({
+        url:'https://script.google.com/macros/s/AKfycbxsAQCQHOBy4whIFVCHQAXGmSaQcbp6k5we9yOD8iCc7gZvvH-M/exec',
+        type:'post',
+        data:$('#imgform').serialize(),
+        success:function(){
+            alert("Registration Successful");
+        }
+    });
+	alert("Registration Successful");
+}
+
+function SubvidForm (){
+	
+    $.ajax({
+        url:'https://script.google.com/macros/s/AKfycbxsAQCQHOBy4whIFVCHQAXGmSaQcbp6k5we9yOD8iCc7gZvvH-M/exec',
+        type:'post',
+        data:$('#vidform').serialize(),
+        success:function(){
+            alert("Registration Successful");
+        }
+    });
+	alert("Registration Successful");
+}
+
+</script>
 	<script>
 function myFunction() {
   var x = document.getElementById("phnum").value;
