@@ -1,0 +1,708 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Aamchi Mumbai Contest </title>
+        <meta name="description" content="">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+       
+		<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+		<!-- CSS here -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+            <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+            <link rel="stylesheet" href="assets/css/slicknav.css">
+            <link rel="stylesheet" href="assets/css/flaticon.css">
+            <link rel="stylesheet" href="assets/css/animate.min.css">
+            <link rel="stylesheet" href="assets/css/magnific-popup.css">
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="assets/css/themify-icons.css">
+            <link rel="stylesheet" href="assets/css/slick.css">
+            <link rel="stylesheet" href="assets/css/nice-select.css">
+            <link rel="stylesheet" href="assets/css/style.css">
+			<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+			<style>
+.mySlides {display:none;}
+.btn {
+  position: absolute;
+  top: 80%;
+  left: 67%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #ff5622;
+  color: white;
+  font-size: 10px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.btn3 {
+  position: absolute;
+  top: 40%;
+  left: 67%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+   color: white;
+  font-size: 1.7vw;
+
+  border: none;
+ 
+  border-radius: 5px;
+  text-align: center;
+}
+</style>
+   </head>
+
+   <body>
+    <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="assets/img/logo/loder.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area">
+                <div class="main-header  header-sticky">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- Logo -->
+                            <div class="col-xl-2 col-lg-2 col-md-1">
+                                <div class="logo">
+                                    <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-10 col-lg-10 col-md-10">
+                                <div class="menu-main d-flex align-items-center justify-content-end">
+                                    <!-- Main-menu -->
+                                    <div class="main-menu f-right d-none d-lg-block">
+                                        <nav> 
+                                            <ul id="navigation">
+                                                <li><a href="index.html">Home</a></li>
+                                                <!--<li><a href="scores.html">Leader Boards</a></li>-->
+                                                <li><a href="rules.html">Terms and Conditions</a></li>
+												
+											</ul>
+											
+                                        </nav>
+										
+                                    </div>
+                                    
+                                </div>
+                            </div>   
+                            <!-- Mobile Menu -->
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <!-- Header End -->
+    </header>
+         
+  
+  <div class="w3-content w3-display-container">
+
+
+
+<div class="w3-display-container mySlides">
+  <img src="assets/img/homeslide.png" style="width:100%">
+  <div class="w3-large w3-container">
+ 
+    <button class="btn">Pre-Register</button>
+  </div>
+</div>
+<button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+<button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+
+</div>
+        <!-- slider Area End-->
+           <section class="categories-area section-padding1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <!-- Section Tittle -->
+                        <div class="section-tittle mb-70">
+                            <h2 class="w3-text-deep-orange">Contest Registration</h2>
+							
+                        </div>
+                    </div>
+                </div>
+				   <div class="w3-bar w3-black">
+    <button class="w3-bar-item w3-button tablink w3-deep-orange" onclick="openCity(event,'vidcont')">Video Contest</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'photocont')">Photo Contest</button>
+   
+  </div>
+  <br>
+  <div id="vidcont" class="w3-container w3-border city">
+    <h2>Video Contest Registration</h2>
+	
+   <div class="container">
+    <form id="vidform"> 
+<div class="form-group">
+    <label >Contact Number</label>
+   <input type="text" class="form-control" maxlength="10" pattern="\d{10}" placeholder="Phone Number 10 Digit" name="phnum" id="phnum" required><br>
+	<button onclick="myFunction();" type="button" class="w3-button w3-deep-orange w3-round-large">Check Number</button>
+  </div>
+  
+   <input type="hidden" value="Video Contest" name="contest">
+	<div class="form-group">
+	<div id="id01"></div>
+      <label>Contest Category</label>
+      <select class="form-control" name="contcateg" id="contcateg" required>
+        <option>Home  (घरगुती)</option>
+        <option>Mandal  (मंडळ)</option>
+        <option>Eco Friendly  (इको-फ्रेंडली)</option>
+       
+      </select>
+	  </div>
+	 
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" class="form-control"  placeholder="Enter Name" name="name" id="name" required>
+
+  </div>
+   <div class="form-group">
+    <label>Address</label>
+    <input type="text" class="form-control"  placeholder="Enter Address" name="addr" id="addr" required>
+
+  </div>
+  
+  
+   <div class="form-group">
+    <label>City</label>
+    <input type="text" class="form-control" placeholder="Enter City" name="city" id="city" required>
+
+  </div>
+  <div class="form-group">
+    <label>State</label>
+    <input type="text" class="form-control" placeholder="Enter State" name="state" id="state" required>
+
+  </div>
+<div class="form-group">
+    <label >Pin Code</label>
+    <input type="text" class="form-control" maxlength="6" pattern="\d{6}" placeholder="Pin Code" name="pincde" id="pincde" required>
+  </div>
+ 
+ <div id="viddata"></div>
+ <div id="vidimgdata"></div>
+  <div class="form-group">
+    <label>Video</label>
+    <input type="file" class="form-control-file" accept="video/*" name="file" id="file" onchange="uploadvidFile(this)"/>
+	<br>
+ <div class="w3-light-grey w3-round-xlarge" id="vidprogress" style="display:none">
+    <div class="w3-container w3-deep-orange w3-round-xlarge" id="vidprogbar" style="width:0%">0%</div>
+  </div>
+ </div>
+ 
+ <div class="form-group">
+    <label>Image</label>
+    <input type="file" class="form-control-file" accept="image/*" name="file" id="file" onchange="uploadvidimgFile(this)"/>
+	<br>
+ <div class="w3-light-grey w3-round-xlarge" id="vidimgprogress" style="display:none">
+    <div class="w3-container w3-deep-orange w3-round-xlarge" id="vidimgprogbar" style="width:0%">0%</div>
+  </div>
+ </div>
+ <div class="form-group">
+    <label>Description</label>
+   
+ 
+ <textarea class="form-control" name="description" id="description" rows="3"></textarea>
+  </div>
+
+  <button id="submit" type="button" class="w3-button w3-deep-orange w3-round-large" onclick="SubvidForm();" >Submit</button>
+
+</form>
+<br>
+  </div>
+  </div>
+  
+   <div id="photocont" class="w3-container w3-border city" style="display:none">
+    <h2>Photo Contest Registration</h2>
+   <div class="container">
+    <form id="imgform" name="imgform"> 
+
+	
+	<div class="form-group">
+    <label >Contact Number</label>
+   <input type="text" class="form-control" maxlength="10" pattern="\d{10}" placeholder="Phone Number 10 digit" name="phnum" id="iphnum" required><br>
+	<button onclick="imyFunction();" type="button" class="w3-button w3-deep-orange w3-round-large">Check Number</button>
+  </div> 
+  <input type="hidden" value="Photo Contest" name="contest">
+  
+	<div class="form-group">
+	<div id="id02"></div>
+      <label>Contest Category</label>
+      <select class="form-control" name="contcateg" id="icontcateg" required>
+        <option>Home  (घरगुती)</option>
+        <option>Mandal  (मंडळ)</option>
+        <option>Eco Friendly  (इको-फ्रेंडली)</option>
+       
+      </select>
+	  </div>
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" class="form-control"  placeholder="Enter Name" name="name" id="iname" required>
+
+  </div>
+   <div class="form-group">
+    <label>Address</label>
+    <input type="text" class="form-control"  placeholder="Enter Address" name="addr" id="iaddr" required>
+
+  </div>
+  
+  <div id="imgdata"></div>
+   <div class="form-group">
+    <label>City</label>
+    <input type="text" class="form-control" placeholder="Enter City" name="city" id="icity" required>
+
+  </div>
+  <div class="form-group">
+    <label>State</label>
+    <input type="text" class="form-control" placeholder="Enter State" name="state" id="istate" required>
+
+  </div>
+<div class="form-group">
+    <label >Pin Code</label>
+    <input type="text" class="form-control" maxlength="6" pattern="\d{6}" placeholder="Pin Code" name="pincde" id="ipincde" required>
+  </div><p>
+   Description and Images will be available to upload after 22nd August 2020<br><br></p>
+  <!--<div class="form-group">
+    <label>Description</label>
+   
+ 
+ <textarea class="form-control" name="description" rows="3"></textarea>
+  </div>
+ 
+ <div class="form-group">
+    <label>Image</label>
+    <input type="file" class="form-control-file" accept="image/*" name="file" id="file">
+	
+ </div>
+ 
+ -->
+  <button id="submit" type="button" class="w3-button w3-deep-orange w3-round-large" onclick="SubimgForm();">Submit</button>
+
+</form>
+<br>
+  </div>
+  </div>
+            </div>
+        </section>
+		<br>
+        <!-- Categories Area End -->
+      
+       
+    <!-- Scroll Up -->
+    <div class="container">
+	<p style="text-align:center; font-size:40px;">Gallery<p>
+	
+	<div class="row">
+		<div class="row" id="img-container">
+         
+		
+
+           
+        </div>
+	</div>
+</div>
+
+    <!-- JS here -->
+	<script>
+function uploadvidFile(inputElement){
+var file = inputElement.files[0];
+
+
+
+  var dropboxToken = 'Zs8qJFDuaXgAAAAAAAAAAb8mGr80jQL2fzh_sF0AioRC1M5NGZa5vAFGKyeZzvpJ';
+  
+  
+var xhr = new XMLHttpRequest();
+ 
+xhr.upload.onprogress = function(evt) {
+  var percentComplete = parseInt(100.0 * evt.loaded / evt.total);
+  percentCompletebar = percentComplete;
+  percentComplete = percentComplete - 2;
+  
+  // Upload in progress. Do something here with the percent complete.
+  var x12 = document.getElementById("vidprogress");
+  x12.style.display = "block"; 
+  var x13 = document.getElementById("vidprogbar");
+  x13.style.width = percentCompletebar + '%';
+  x13.innerHTML = percentComplete + '%';
+  
+  };
+ 
+xhr.onload = function() {
+  if (xhr.status === 200) {
+    var fileInfo = JSON.parse(xhr.response);
+    // Upload succeeded. Do something here with the file info.
+	 var x13 = document.getElementById("vidprogbar");
+	 x13.innerHTML = 'Video Uploaded';
+	 
+	 
+  }
+  else {
+    var errorMessage = xhr.response || 'Unable to upload file';
+    // Upload failed. Do something here with the error.
+	
+  }
+};
+ 
+xhr.open('POST', 'https://content.dropboxapi.com/2/files/upload');
+xhr.setRequestHeader('Authorization', 'Bearer ' + dropboxToken);
+xhr.setRequestHeader('Content-Type', 'application/octet-stream');
+xhr.setRequestHeader('Dropbox-API-Arg', JSON.stringify({
+  path: '/' + file.name,
+  mode: 'add',
+  autorename: true,
+  mute: false
+}));
+ 
+xhr.send(file);
+var html = '<input type="hidden" name="vidfilename" id="vidfilename" value="' + file.name + '" >';
+            $("#viddata").empty().append(html);
+			
+}
+
+function uploadvidimgFile(inputElement){
+var file = inputElement.files[0];
+
+
+
+  var dropboxToken = 'Zs8qJFDuaXgAAAAAAAAAAb8mGr80jQL2fzh_sF0AioRC1M5NGZa5vAFGKyeZzvpJ';
+  
+  
+var xhr = new XMLHttpRequest();
+ 
+xhr.upload.onprogress = function(evt) {
+  var percentComplete = parseInt(100.0 * evt.loaded / evt.total);
+  percentCompletebar = percentComplete;
+  percentComplete = percentComplete - 2;
+  
+  // Upload in progress. Do something here with the percent complete.
+  var x12 = document.getElementById("vidimgprogress");
+  x12.style.display = "block"; 
+  var x13 = document.getElementById("vidimgprogbar");
+  x13.style.width = percentCompletebar + '%';
+  x13.innerHTML = percentComplete + '%';
+  
+  };
+ 
+xhr.onload = function() {
+  if (xhr.status === 200) {
+    var fileInfo = JSON.parse(xhr.response);
+    // Upload succeeded. Do something here with the file info.
+	 var x13 = document.getElementById("vidimgprogbar");
+	 x13.innerHTML = 'Image Uploaded';
+	 
+	 
+  }
+  else {
+    var errorMessage = xhr.response || 'Unable to upload file';
+    // Upload failed. Do something here with the error.
+	
+  }
+};
+ 
+xhr.open('POST', 'https://content.dropboxapi.com/2/files/upload');
+xhr.setRequestHeader('Authorization', 'Bearer ' + dropboxToken);
+xhr.setRequestHeader('Content-Type', 'application/octet-stream');
+xhr.setRequestHeader('Dropbox-API-Arg', JSON.stringify({
+  path: '/' + file.name,
+  mode: 'add',
+  autorename: true,
+  mute: false
+}));
+ 
+xhr.send(file);
+var html = '<input type="hidden" name="vidimgfilename" id="vidimgfilename" value="' + file.name + '" >';
+            $("#vidimgdata").empty().append(html);
+			
+}
+
+</script>
+	
+	<script>
+	
+	
+	function SubimgForm (){
+	 var x = document.getElementById("iphnum").value;
+	 var name =  document.getElementById('iname').value;
+       var city = document.getElementById('icity').value;
+	var state =  document.getElementById('istate').value;
+   var addr =  document.getElementById('iaddr').value;
+	  var pincode = document.getElementById('ipincde').value;
+   
+	
+	if(x && name && city && state && addr && pincde){
+	
+    $.ajax({
+        url:'https://script.google.com/macros/s/AKfycbxsAQCQHOBy4whIFVCHQAXGmSaQcbp6k5we9yOD8iCc7gZvvH-M/exec',
+        type:'post',
+        data:$('#imgform').serialize(),
+        success:function(){
+           
+        }
+    });
+	alert("Registration Successful");
+	}
+	else
+	{
+	alert("Registration Failed Fill All Details");
+	}
+}
+
+function SubvidForm (){
+
+ var x = document.getElementById("phnum").value;
+	 var name =  document.getElementById('name').value;
+       var city = document.getElementById('city').value;
+	var state =  document.getElementById('state').value;
+   var addr =  document.getElementById('addr').value;
+	  var pincode = document.getElementById('pincde').value;
+	 	   var description = document.getElementById('description').value;
+		   var serialized = $('#vidform').serialize();
+		   console.log(serialized);
+	  
+
+	if(x && name && city && state && addr && pincde && description){
+	
+	
+    $.ajax({
+        url:'https://script.google.com/macros/s/AKfycbwkUe0HkvKfFu1udXO-juKTIB242aFA5OKzyCxxILJSh9DvqCs/exec',
+        type:'post',
+        data:$('#vidform').serialize(),
+        success:function(){
+            
+        }
+    });
+	alert("Registration Successful");
+	}
+	else
+	{
+	alert("Registration Failed Fill All Details or Whatsapp Us At : 8652729409");
+	}
+	
+}
+
+</script>
+	<script>
+function myFunction() {
+  var x = document.getElementById("phnum").value;
+
+
+
+var xmlhttp = new XMLHttpRequest();
+var x2 = "https://script.google.com/macros/s/AKfycbzDpdBX2DQTfTePu1NZsYFwyCG1kCd8_Lw_yXN1m3QhyybzqD3n/exec?phnum=";
+var url = x2.concat(x);
+console.log(url);
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    var myArr = JSON.parse(this.responseText);
+    stringify (myArr);
+  }
+};
+
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+
+}
+
+function stringify (arr) {
+var out = "";
+   	 out += '<p>' +     arr.response + '</p><br>';
+	document.getElementById("id01").innerHTML = out;
+	
+	if (arr.name !=undefined){
+	
+	
+	 document.getElementById('name').value = arr.name;
+    document.getElementById('city').value = arr.city;
+	 document.getElementById('state').value = arr.state;
+    document.getElementById('addr').value = arr.address;
+	 document.getElementById('pincde').value = arr.pin_code;
+    document.getElementById('contcateg').value = arr.contest_category;
+	
+
+	}
+}
+</script>
+
+	<script>
+function imyFunction() {
+  var x = document.getElementById("iphnum").value;
+
+
+
+var xmlhttp1 = new XMLHttpRequest();
+var x2 = "https://script.google.com/macros/s/AKfycbzDpdBX2DQTfTePu1NZsYFwyCG1kCd8_Lw_yXN1m3QhyybzqD3n/exec?phnum=";
+var url = x2.concat(x);
+console.log(url);
+xmlhttp1.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    var myArr = JSON.parse(this.responseText);
+    istringify (myArr);
+  }
+};
+
+xmlhttp1.open("GET", url, true);
+xmlhttp1.send();
+
+
+}
+
+function istringify (arr) {
+
+	var out = "";
+   	 out += '<p>' +     arr.response + '</p><br>';
+	 	document.getElementById("id02").innerHTML = out;
+	
+	if (arr.name !=undefined){
+	
+
+	 document.getElementById('iname').value = arr.name;
+    document.getElementById('icity').value = arr.city;
+	 document.getElementById('istate').value = arr.state;
+    document.getElementById('iaddr').value = arr.address;
+	 document.getElementById('ipincde').value = arr.pin_code;
+    document.getElementById('icontcateg').value = arr.contest_category;
+	}
+	
+	
+}
+</script>
+<script>
+   
+   
+var xmlhttp2 = new XMLHttpRequest();
+var url = "https://script.google.com/macros/s/AKfycbyZXux7ATU1m3ZSIH29q6QvtHfi0zj2KkJCHKe5u8wd-q_Zv3ha/exec";
+
+xmlhttp2.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    var mygalimgdata = JSON.parse(this.responseText);
+    imgstringify (mygalimgdata);
+  }
+};
+
+xmlhttp2.open("GET", url, true);
+xmlhttp2.send();
+
+
+
+function imgstringify (galimgdata) {
+
+  galimgdata.forEach( function(obj) {
+  
+   var div = document.createElement('div');
+   div.className = 'col-lg-3 col-md-4 col-xs-6 thumb';
+  var img = new Image();
+  img.src = obj.imglink;
+   img.setAttribute("class", "img-thumbnail");
+    img.setAttribute("id", "img-ht-wt-px");
+	 
+  div.appendChild(img);
+   document.getElementById("img-container").appendChild(div);
+  	  
+	 
+
+});
+			
+}
+</script>
+	<script>
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-deep-orange", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " w3-deep-orange";
+}
+</script>
+	<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 3100); 
+}
+</script>
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+		<!-- All JS Custom Plugins Link Here here -->
+		       
+		  
+        <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+		<!-- Jquery, Popper, Bootstrap -->
+		<script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="./assets/js/popper.min.js"></script>
+        <script src="./assets/js/bootstrap.min.js"></script>
+		
+	    <!-- Jquery Mobile Menu -->
+        <script src="./assets/js/jquery.slicknav.min.js"></script>
+
+		<!-- Jquery Slick , Owl-Carousel Plugins -->
+        <script src="./assets/js/owl.carousel.min.js"></script>
+        <script src="./assets/js/slick.min.js"></script>
+		<!-- One Page, Animated-HeadLin -->
+        <script src="./assets/js/wow.min.js"></script>
+		<script src="./assets/js/animated.headline.js"></script>
+        <script src="./assets/js/jquery.magnific-popup.js"></script>
+
+		<!-- Nice-select, sticky -->
+        <script src="./assets/js/jquery.nice-select.min.js"></script>
+		<script src="./assets/js/jquery.sticky.js"></script>
+        
+        <!-- contact js -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="./assets/js/jquery.slicknav.min.js"></script>
+		<!-- Jquery Plugins, main Jquery -->	
+        <script src="./assets/js/plugins.js"></script>
+        <script src="./assets/js/main.js"></script>
+        
+    </body>
+</html>
