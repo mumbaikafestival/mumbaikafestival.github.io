@@ -275,22 +275,25 @@
 <div class="form-group">
     <label >Pin Code</label>
     <input type="text" class="form-control" maxlength="6" pattern="\d{6}" placeholder="Pin Code" name="pincde" id="ipincde" required>
-  </div><p>
-   Description and Images will be available to upload after 22nd August 2020<br><br></p>
-  <!--<div class="form-group">
+  </div>
+ 
+ 
+ <div class="form-group">
+    <label>Images (Only 5 Image Allowed)</label>
+    <input type="file" class="form-control-file" accept="image/*" name="file" id="imagefile" onchange="uploadimgFile(this);" multiple />
+	<br>
+	 <div class="w3-light-grey w3-round-xlarge" id="imgprogress" style="display:none">
+    <div class="w3-container w3-deep-orange w3-round-xlarge" id="imgprogbar" style="width:0%">0%</div>
+  </div>
+	
+ </div>
+  <div class="form-group">
     <label>Description</label>
    
  
  <textarea class="form-control" name="description" rows="3"></textarea>
   </div>
  
- <div class="form-group">
-    <label>Image</label>
-    <input type="file" class="form-control-file" accept="image/*" name="file" id="file">
-	
- </div>
- 
- -->
   <button id="submit" type="button" class="w3-button w3-deep-orange w3-round-large" onclick="SubimgForm();">Submit</button>
 
 </form>
@@ -317,7 +320,73 @@
 	</div>
 </div>
 
-    <!-- JS here -->
+    <script>
+
+
+function uploadimgFile(inputElement){
+if (inputElement.files.length > 5){
+alert("Only Select 5 Images");
+document.getElementById("imagefile").value = "";
+}
+else{
+var i;
+for (i = 0; i < inputElement.files.length; i++){
+var file = inputElement.files[i];
+
+
+  var dropboxToken = 'Zs8qJFDuaXgAAAAAAAAAAb8mGr80jQL2fzh_sF0AioRC1M5NGZa5vAFGKyeZzvpJ';
+  
+  
+var xhr = new XMLHttpRequest();
+ 
+xhr.upload.onprogress = function(evt) {
+  var percentComplete = parseInt(100.0 * evt.loaded / evt.total);
+  percentCompletebar = percentComplete;
+  percentComplete = percentComplete - 2;
+  
+  // Upload in progress. Do something here with the percent complete.
+  var x1i2 = document.getElementById("imgprogress");
+  x1i2.style.display = "block"; 
+  var x1i3 = document.getElementById("imgprogbar");
+  x1i3.style.width = percentCompletebar + '%';
+  x1i3.innerHTML = percentComplete + '%';
+  
+  };
+ 
+xhr.onload = function() {
+  if (xhr.status === 200) {
+    var fileInfo = JSON.parse(xhr.response);
+    // Upload succeeded. Do something here with the file info.
+	 var x1i3 = document.getElementById("imgprogbar");
+	 x1i3.innerHTML = i + ' Image Uploaded';
+	 
+	 
+  }
+  else {
+    var errorMessage = xhr.response || 'Unable to upload file';
+    // Upload failed. Do something here with the error.
+	
+  }
+};
+ 
+xhr.open('POST', 'https://content.dropboxapi.com/2/files/upload');
+xhr.setRequestHeader('Authorization', 'Bearer ' + dropboxToken);
+xhr.setRequestHeader('Content-Type', 'application/octet-stream');
+xhr.setRequestHeader('Dropbox-API-Arg', JSON.stringify({
+  path: '/Photo-Contest/' + file.name,
+  mode: 'add',
+  autorename: true,
+  mute: false
+}));
+ 
+-xhr.send(file);
+console.log(i)
+var html = '<input type="hidden" name="imgfilename' + i + '" id="imgfilename ' + i + '" value="' + file.name + '" >';
+            $("#imgdata").append(html);
+}
+		
+}}
+</script>
 	<script>
 function uploadvidFile(inputElement){
 var file = inputElement.files[0];
@@ -363,7 +432,7 @@ xhr.open('POST', 'https://content.dropboxapi.com/2/files/upload');
 xhr.setRequestHeader('Authorization', 'Bearer ' + dropboxToken);
 xhr.setRequestHeader('Content-Type', 'application/octet-stream');
 xhr.setRequestHeader('Dropbox-API-Arg', JSON.stringify({
-  path: '/' + file.name,
+  path: '/Video-Contest/' + file.name,
   mode: 'add',
   autorename: true,
   mute: false
@@ -419,7 +488,7 @@ xhr.open('POST', 'https://content.dropboxapi.com/2/files/upload');
 xhr.setRequestHeader('Authorization', 'Bearer ' + dropboxToken);
 xhr.setRequestHeader('Content-Type', 'application/octet-stream');
 xhr.setRequestHeader('Dropbox-API-Arg', JSON.stringify({
-  path: '/' + file.name,
+  path: '/Video-Contest/' + file.name,
   mode: 'add',
   autorename: true,
   mute: false
@@ -443,9 +512,11 @@ var html = '<input type="hidden" name="vidimgfilename" id="vidimgfilename" value
 	var state =  document.getElementById('istate').value;
    var addr =  document.getElementById('iaddr').value;
 	  var pincode = document.getElementById('ipincde').value;
+	  var serializedd = $('#imgform').serialize();
+	  console.log(serializedd);
    
 	
-	if(x && name && city && state && addr && pincde){
+	if(x && name && city && state && addr && pincode){
 	
     $.ajax({
         url:'https://script.google.com/macros/s/AKfycbxsAQCQHOBy4whIFVCHQAXGmSaQcbp6k5we9yOD8iCc7gZvvH-M/exec',
@@ -464,7 +535,6 @@ var html = '<input type="hidden" name="vidimgfilename" id="vidimgfilename" value
 }
 
 function SubvidForm (){
-
  var x = document.getElementById("phnum").value;
 	 var name =  document.getElementById('name').value;
        var city = document.getElementById('city').value;
@@ -472,12 +542,12 @@ function SubvidForm (){
    var addr =  document.getElementById('addr').value;
 	  var pincode = document.getElementById('pincde').value;
 	 	   var description = document.getElementById('description').value;
-		   var serialized = $('#vidform').serialize();
-		   console.log(serialized);
+		   var vidname = document.getElementById('vidfilename').value;
+		    var vidimgname = document.getElementById('vidimgfilename').value;
+		   
 	  
 
-	if(x && name && city && state && addr && pincde && description){
-	
+	if(x && name && city && state && addr && pincode){	
 	
     $.ajax({
         url:'https://script.google.com/macros/s/AKfycbwkUe0HkvKfFu1udXO-juKTIB242aFA5OKzyCxxILJSh9DvqCs/exec',
