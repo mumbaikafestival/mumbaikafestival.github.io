@@ -89,7 +89,7 @@
                                             <ul id="navigation">
                                                 <li><a href="index.html">Home</a></li>
                                                 <li><a href="videoContest.html">Video Contest</a></li>
-                                                <li><a href="photoContest.html">Photo Contest</a></li>
+						    <li><a href="photoContest.html">Photo Contest</a></li>
                                                 <li><a href="rules.html">Terms and Conditions</a></li>
 												
 											</ul>
@@ -115,14 +115,7 @@
 
          
   <div class="w3-container">
-  <div class="row">
-	
-	<div class="col">
-	<div class="card card-body">
-	<input id="search-input" class="form-control" type="text" placeholder="Search Here">
-	</div>
-	</div>
-	</div>
+ 
   
   <table class="table table-striped">
   <tr class="bg-info w3-deep-orange">
@@ -148,12 +141,10 @@ var xmlhttp1 = new XMLHttpRequest();
 var x2 = "https://script.google.com/macros/s/AKfycbxTPZTvl_-Z7LGBVW53iQQDYBRBI-xygaXiqSeLSpQRiIdQ5o4/exec";
 xmlhttp1.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
-    var myArr = JSON.parse(this.responseText);
-   buildTable(myArr);
-   $('#search-input').on('keyup',function(){
-   var value = $(this).val();
-   
-   })
+   var myArr = JSON.parse(this.responseText);
+	buildTable(myArr);
+	
+      
   }
 };
 
@@ -165,7 +156,7 @@ xmlhttp1.send();
 
 	function buildTable(arr) {
 	var table = document.getElementById('myTable');
-    
+    table.innerHTML = '';
     var i;
     for(i = 0; i < arr.length; i++) {
       var out = '<tr>' + '<td><a href="' + arr[i].youtubeurl + '"><i class="fa fa-youtube-play" style="font-size:48px;color:red"></i></a></td>' + '<td>' + arr[i].name + '</td>' + '<td>' + arr[i].contest_category + '</td>' + '<td>' + arr[i].likes + '</td>' + '<td>' + arr[i].views + '</td>' + '<td>' + arr[i].points + '</td></tr>';
@@ -175,10 +166,7 @@ xmlhttp1.send();
     
 }
 
-
-
-
-
+	
 		</script>
 		       
 		  
