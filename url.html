@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Qr Code</title>
+    </head>
+    <body>
+      <form action="" id="form" onsubmit="sSubmit(event)">
+        <input type="text" name="data" id="data" placeholder="data">
+        <button type="submit">Submit</button>
+        <p>if data = url then qr scanner will show visit<br> website else if data = text then qr scanner <br> will show qr details</p>
+      </form>
+
+        <canvas id="canvas"></canvas>
+ 
+<script src="/qrcode.min.js"></script>
+<script>
+
+  function onClickGen(val){
+    console.log(val);
+  QRCode.toCanvas(document.getElementById('canvas'), val, function (error) {
+    if (error) console.error(error)
+    console.log('success!');
+  })}
+
+  function sSubmit(event) {
+  event.preventDefault();
+  var data = document.getElementById("data");
+  onClickGen(data.value);
+  
+  
+}
+</script> 
+    </body>
+</html>
